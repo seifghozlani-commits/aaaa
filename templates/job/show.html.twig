@@ -1,4 +1,4 @@
-{% {% extends "template_job.html.twig" %} %}
+{% {% extends "template_job.html.twig  " %} %}
 {% block title %}
     {{ parent () }}
 {% endblock %} 
@@ -29,7 +29,19 @@
         </tr>
 
     </table>
+    
+    {% if listeC | length > 0 %}
+        <h3> liste des condidatures ...</h3>
+        {% for c in listeC %}
+            <ul>
+                <li>nom et prenom : {{ c.candidat }}</li>
+                <li>contenu :{{ c.contenu }}</li>
+                <li>date depot : {{ c.date | date("d-m-Y") }}</li>
+            </ul>
+    {% endfor %}
+
     {% else %}
+
     {<p class="text-danger">code job incorrect</p>}
     {% end if %}
 {% endblock %} 
