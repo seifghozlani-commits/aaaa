@@ -1,0 +1,35 @@
+{% {% extends "template_job.html.twig" %} %}
+{% block title %}
+    {{ parent () }}
+{% endblock %} 
+
+{% block body %}
+    <h3>detail Job</h3>
+    <hr>
+    {% if job %}
+    <table class ="table table-border">
+        <tr>
+            <td>Type</td><td>{{ job.getType }}</td>
+        </tr> 
+        
+        <tr>
+            <td>Description</td><td>{{ job.getDescription }}</td>
+        </tr>
+        
+        <tr>
+            <td>Email</td><td>{{ job.getEmail }}</td>
+        </tr>   
+            
+        <tr>
+            <td>Company</td><td>{{ job.getCompany }}</td>
+        </tr>
+
+        <tr>
+            <td>Dte Expiration</td><td>{{ job.getExpiresAt | date("d-m-Y") }}</td>
+        </tr>
+
+    </table>
+    {% else %}
+    {<p class="text-danger">code job incorrect</p>}
+    {% end if %}
+{% endblock %} 

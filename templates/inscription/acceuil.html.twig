@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+{% block title %}
+    {{ parent() }}
+    - accueil
+{% endblock %}
+
+{% block titre %} 
+{{ parent() }} - accueil
+{% endblock %}
+
+{% block body %} 
+<p>La valeur du nombre=<strong>{{ nombre }}</strong></p> 
+<a href="{{ path('page_contact') }}"> acces page contact</a>
+{% endblock %}

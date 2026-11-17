@@ -1,0 +1,12 @@
+la valeur générée = <strong>{{ nombre }}</strong>
+<p>Page : {{ nomPage }}</p>
+<p>Nombre de caractères : {{ nomPage|length }}</p>
+<p>En majuscules : {{ nomPage|upper }}</p>
+<p>Statut : 
+{% if estOuvert %}
+    Ouvert
+{% else %}
+     Fermé
+{% endif %}
+</p>
+<p>Nous sommes le {{ dateDuJour|date('d/m/Y') }}</p>

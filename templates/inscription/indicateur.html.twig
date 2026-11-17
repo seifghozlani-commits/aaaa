@@ -1,0 +1,18 @@
+<table border='1' class="table table-bordred">
+    <thead>
+        <tr>
+            <th>Libellé</th>
+            <th>Valeur</th>
+            <th>Unité</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ligne in indicateurs %}
+            <tr>
+                <td>{{ ligne.libelle }}</td>
+                <td>{{  ligne.valeur|number_format(2,'.',' ')}}</td>
+                <td>{{ ligne.unite }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
